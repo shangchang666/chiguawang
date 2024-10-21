@@ -2,10 +2,10 @@
   "name": "chiguawang",
   "version": "1.0.0",
   "description": "A brief description of your project",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "node server.js"
+    "start": "node server.html"
   },
   "repository": {
     "type": "git",
