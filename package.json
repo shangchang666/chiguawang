@@ -1,0 +1,24 @@
+{
+  "name": "chiguawang",
+  "version": "1.0.0",
+  "description": "A brief description of your project",
+  "main": "./dist/index.html",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "node server.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shangchang666/chiguawang.git"
+  },
+  "keywords": ["example", "project"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
