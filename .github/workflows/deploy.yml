@@ -15,10 +15,11 @@ jobs:
         uses: actions/checkout@v2
 
       # 设置 Node.js 环境
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # 可根据需要修改 Node 版本
+      - - name: Checkout repository
+  uses: actions/checkout@v4
+  with:
+    ref: main
+
 
       # 安装依赖
       - name: Install dependencies
