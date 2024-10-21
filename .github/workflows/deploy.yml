@@ -3,35 +3,31 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 监听 main 分支的提交操作
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 检查出代码库
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          ref: main
 
-      # 设置 Node.js 环境
-      - - name: Checkout repository
-  uses: actions/checkout@v4
-  with:
-    ref: main
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'  # 使用您项目需要的 Node.js 版本
 
-
-      # 安装依赖
       - name: Install dependencies
         run: npm install
 
-      # 构建项目
       - name: Build project
-        run: npm run build  # 这一步会生成 dist 文件夹
+        run: npm run build  # 确保此命令在本地能够正常工作
 
-      # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # 这里指向生成的 dist 文件夹
+          publish_dir: ./dist  # 确保此路径指向您的 dist 文件夹
