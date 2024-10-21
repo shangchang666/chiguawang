@@ -1,24 +1,24 @@
 {
-  "name": "chiguawang",                       // 项目名称
-  "version": "1.0.0",                         // 项目版本
-  "description": "A brief description of your project", // 项目描述
-  "main": "index.js",                         // 入口文件
+  "name": "chiguawang",
+  "version": "1.0.0",
+  "description": "A brief description of your project",
+  "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",     // 构建命令
-    "start": "node server.js"                 // 启动命令
+    "build": "webpack --mode production",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shangchang666/chiguawang.git" // 代码仓库地址
+    "url": "https://github.com/shangchang666/chiguawang.git"
   },
-  "keywords": ["example", "project"],         // 项目关键词
-  "author": "Your Name",                      // 作者
-  "license": "MIT",                           // 许可证类型
+  "keywords": ["example", "project"],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"                      // 示例依赖
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "webpack": "^5.64.4",                      // 示例开发依赖
+    "webpack": "^5.64.4",
     "webpack-cli": "^4.9.1"
   }
 }
