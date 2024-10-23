@@ -1,1 +1,70 @@
+以下是你在使用 Git 上传本地项目到 GitHub 的总结步骤：
 
+### 1. **初始化 Git 仓库**
+在项目目录中初始化 Git 仓库：
+```bash
+git init
+```
+
+### 2. **添加文件到暂存区**
+将所有文件添加到 Git 暂存区：
+```bash
+git add .
+```
+
+### 3. **配置换行符处理（可选）**
+为了避免换行符的问题，设置 `core.autocrlf`：
+```bash
+git config --global core.autocrlf true
+```
+
+### 4. **提交更改**
+将添加的文件提交到本地仓库：
+```bash
+git commit -m "Initial commit"
+```
+
+### 5. **添加远程仓库**
+将 GitHub 仓库添加为远程仓库（选择 SSH 或 HTTPS）：
+```bash
+git remote add origin git@github.com:shangchang666/meitu.git
+# 或者
+git remote add origin https://github.com/shangchang666/meitu.git
+```
+
+### 6. **生成 SSH 密钥（如果需要）**
+如果你选择使用 SSH 连接，并且还没有 SSH 密钥，可以使用以下命令生成：
+```bash
+ssh-keygen -t rsa -b 4096 -C "你的邮箱@example.com"
+```
+
+### 7. **添加 SSH 公钥到 GitHub**
+在 GitHub 设置中，将公钥（`id_rsa.pub` 文件内容）添加到 **SSH and GPG keys**。
+
+### 8. **测试 SSH 连接**
+使用以下命令测试 SSH 连接：
+```bash
+ssh -T git@github.com
+```
+成功连接后，你会看到确认消息。
+
+### 9. **推送代码到 GitHub**
+确认远程仓库 URL 使用 SSH（或 HTTPS），然后推送代码：
+```bash
+git push -u origin master
+```
+
+### 10. **处理推送速度慢的问题**
+- **等待推送完成**，特别是大项目时。
+- **检查网络连接**，确保网络稳定。
+- **使用 Git LFS** 管理大文件。
+- **考虑移除非常大的文件**，并在代码中引用外部链接。
+
+### 常见问题及解决方案
+- **“Key is already in use”**：表示该 SSH 公钥已在 GitHub 注册，不需重复添加。
+- **推送错误或连接问题**：检查网络连接，确认 SSH 设置正确。
+
+如果在上述步骤中遇到任何问题，或有其他需要解决的疑问，请随时询问！
+
+
+git config --global http.proxy 127.0.0.1:8087
